@@ -12,7 +12,7 @@ class InterestCalc:
         self.time_years = TIME_YEARS
 
         # Variables & values
-        self.monthly_interest = self.yearly_interest / 12
+        self.monthly_interest = (self.yearly_interest / 100) / 12
         self.time_month = self.time_years * 12
         self.current_month = 0
         self.savings = self.start_money
@@ -33,7 +33,15 @@ class InterestCalc:
 
     def print_result(self):
         """ Print the result from the calculation """
-        print(self.savings)
+        savings_print = round(self.savings, 2)
+
+        print(" ")
+        print("Monthly deposition:  ", self.monthly_deposit, "sek")
+        print("Yearly interest:     ", self.yearly_interest, "%")
+        print("Savings from start:  ", self.start_money, "sek")
+        print(" ")
+        print("After", self.time_years, "years you have", savings_print, "sek in your account")
+        print(" ")
 
 
 run = InterestCalc()

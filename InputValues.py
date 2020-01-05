@@ -3,8 +3,8 @@
 Input all your values here.
 """
 
-# Growth of savings every year
-YEARLY_INTEREST = 0.10
+# Growth of savings every year in percent
+YEARLY_INTEREST = 10
 
 # Monthly depositions (in sek)
 MONTHLY_DEP = 2000
@@ -13,4 +13,4 @@ MONTHLY_DEP = 2000
 START_MONEY = 50000
 
 # Calculated time period in years
-TIME_YEARS = 1
+TIME_YEARS = 10
