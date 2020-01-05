@@ -1,2 +1,2 @@
 # InterestCalc
-Calculate interest based on monthly deposits
+Calculate savings based on interest and monthly deposits
