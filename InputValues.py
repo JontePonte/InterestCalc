@@ -13,4 +13,4 @@ MONTHLY_DEP = 2000
 START_MONEY = 50000
 
 # Calculated time period in years
-TIME_YEARS = 10
+TIME_YEARS = 1
