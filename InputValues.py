@@ -7,10 +7,10 @@ Input all your values here.
 YEARLY_INTEREST = 8
 
 # Monthly depositions (in sek)
-MONTHLY_DEP = 500
+MONTHLY_DEP = 2000
 
 # Money in account from start
-START_MONEY = 10000
+START_MONEY = 50000
 
 # Calculated time period in years
-TIME_YEARS = 15
+TIME_YEARS = 10
