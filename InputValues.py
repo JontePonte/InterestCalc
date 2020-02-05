@@ -14,3 +14,6 @@ START_MONEY = 50000
 
 # Calculated time period in years
 TIME_YEARS = 10
+
+# Yearly withdrawal from account
+YEARLY_WITHDRAWAL = 10000

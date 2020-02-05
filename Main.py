@@ -10,13 +10,15 @@ class InterestCalc:
         self.monthly_deposit = MONTHLY_DEP
         self.start_money = START_MONEY
         self.time_years = TIME_YEARS
+        self.yearly_withdrawal = YEARLY_WITHDRAWAL
 
         # Variables & values
         self.monthly_interest = (self.yearly_interest / 100) / 12
         self.time_month = self.time_years * 12
         self.current_month = 0
         self.savings = self.start_money
-        self.investment = 0
+        self.total_investment = 0
+        self.total_withdrawal = 0
 
         # Do all the calculations
         self.calculate_interest()
@@ -32,7 +34,11 @@ class InterestCalc:
             # Add interest
             self.savings = (1 + self.monthly_interest) * self.savings
             # Keep track of the invested money
-            self.investment += self.monthly_deposit
+            self.total_investment += self.monthly_deposit
+            # Yearly withdrawal from account
+            if (month + 1) % 12 == 0:
+                self.savings -= self.yearly_withdrawal
+                self.total_withdrawal += self.yearly_withdrawal
 
     def print_result(self):
         """ Print the result from the calculation """
@@ -42,7 +48,8 @@ class InterestCalc:
         print("Monthly deposition:  ", self.monthly_deposit, "sek")
         print("Yearly interest:     ", self.yearly_interest, "%")
         print("Savings from start:  ", self.start_money, "sek")
-        print("Total deposition:    ", self.investment, "sek")
+        print("Total deposition:    ", self.total_investment, "sek")
+        print("Total withdrawal:    ", self.total_withdrawal, "sek")
         print(" ")
         print("After", self.time_years, "years you have", savings_print, "sek in your account")
         print(" ")
