@@ -4,7 +4,7 @@ Input all your values here.
 """
 
 # Growth of savings every year in percent
-YEARLY_INTEREST = 8
+YEARLY_INTEREST = 10
 
 # Monthly depositions (in sek)
 MONTHLY_DEP = 2000

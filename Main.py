@@ -1,4 +1,5 @@
 
+import matplotlib.pyplot as plt
 from InputValues import *
 
 
@@ -20,11 +21,18 @@ class InterestCalc:
         self.total_investment = 0
         self.total_withdrawal = 0
 
+        # Lists for the plot
+        self.savings_list = []
+        self.years_list = []
+
         # Do all the calculations
         self.calculate_interest()
 
         # Print the results in a nice way
         self.print_result()
+
+        # Plot results in an even nicer way
+        self.plot_result()
 
     def calculate_interest(self):
         """ Do all the calculations to get total savings after X years """
@@ -40,6 +48,10 @@ class InterestCalc:
                 self.savings -= self.yearly_withdrawal
                 self.total_withdrawal += self.yearly_withdrawal
 
+            # Save "savings" every month in a list for printing
+            self.savings_list.append(self.savings)
+            self.years_list.append((month + 1) / 12)
+
     def print_result(self):
         """ Print the result from the calculation """
         savings_print = round(self.savings, 2)
@@ -53,6 +65,16 @@ class InterestCalc:
         print(" ")
         print("After", self.time_years, "years you have", savings_print, "sek in your account")
         print(" ")
+
+    def plot_result(self):
+        """ Plot the result in i nice graph """
+
+        plt.plot(self.years_list, self.savings_list)
+        plt.title('Growth of Savings')
+        plt.xlabel('Time [years]')
+        plt.ylabel('Savings [sek]')
+        plt.grid(True)
+        plt.show()
 
 
 run = InterestCalc()
